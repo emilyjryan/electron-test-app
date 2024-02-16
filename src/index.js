@@ -4,6 +4,13 @@ const path = require ('path');
 let win
 let second_win
 
+const fibonacci = () => {
+  if (n <= 1) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 const create_window = () => {
 
   win = new BrowserWindow({
@@ -24,8 +31,8 @@ const create_window = () => {
     }
   })
 
-  win.loadFile(path.join('src/index.html'))
-  second_win.loadFile(path.join('src/index2.html'))
+  win.loadFile(path.join('src/countdown10.html'))
+  second_win.loadFile(path.join('src/countdown100.html'))
 
   win.on('closed', () => {
     win = null;
@@ -38,7 +45,15 @@ const create_window = () => {
 }
 
 
-app.whenReady().then(create_window);
+app.whenReady().then(() => {
+  
+  create_window();
+
+  console.log('Starting Fibonacci calculation...');
+  const fibResult = fibonacci(10); // Adjust the input value as needed
+  console.log(`Fibonacci result: ${fibResult}`);
+
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
