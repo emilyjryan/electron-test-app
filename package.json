@@ -1,0 +1,22 @@
+{
+  "name": "electron-test-app",
+  "version": "1.0.0",
+  "description": "test app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "emily",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  }
+}
