@@ -4,7 +4,7 @@ const path = require ('path');
 let win
 let second_win
 
-const fibonacci = () => {
+function fibonacci(n) {
   if (n <= 1) {
     return n;
   }
